@@ -5,6 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-
+{{ form.errors }}
+<form method="post">
+    {% csrf_token %}
+    {% for foo in form %}
+        {{ foo.label }}
+        {{ foo }}
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
 </body>
 </html>
